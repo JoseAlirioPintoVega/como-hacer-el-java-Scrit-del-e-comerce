@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1 class="title">Como hacer el js del E-comerce</h1>
+    <section class="p1">
+        <h2>1.	logica del menú y carro</h2>
+        <div class="p2">
+            <h3>1.1.	Creamos una contante para obtener la clase la imagen del menú o del carro </h3>
+            <div class="p3">
+                <p>1.1.1.	const cart/menú = document.querySelector('. nombredelaclasedelcontenedordelaimagen);</p>
+                
+            </div>
+            <div class="p2">
+                <h3>1.2.	Creamos una constante para el contenedor del el cart o el menú que queremos mostrar </h3>
+                <div class="p3">
+                    <p>1.2.1.	const contanerCart/Menu = document.querySelector('. nombredelaclasedelcontenedordelmenuocart);</p>
+                </div>
+            </div>
+            <div class="p2">
+                <h3>1.3.	Creamos una función para mostrar el menú/cart. </h3>
+                <div class="p3">
+                    <p> function showMenu() {<br>
+                        navMenu.classList.toggle("menu__show"); <br>
+                    }
+                    </p>
+                    <div class="nota">
+                        NOTA: esto se hace partiendo de que vamos a mostar el menu con una clase que se coloca el en css,  la cual modifica un parametro del objeto y nos lo muestra puede ser el tranlate o el lelf o right depende de como lo quieras hacer
+                    </div>
+                </div>
+            </div> 
+        </div>    
+    </section> 
+    <section class="p1">
+        <h2>Pintando el inventario</h2>
+        <div class="p2">
+            <h3>2.1.	Primero debemos crear un array de objetos el cual sera nuestro inventario </h3>
+            <div class="p3">
+                <p>let inventario = [<br>
+                    {<br>
+                    id: 01,<br>
+                    name: "nombre del product",<br>
+                    stock: 10,<br>
+                    price: 14.00,<br>
+                    imagen: "Link de la imagen"<br>
+                    },<br>
+                    ...<br>
+                    ]<br>
+                </p>
+                <div class="nota">
+                    NOTA: cabe aclarar que el numero de objetos depende de los que necesitemos.
+                </div>
+            </div>
+            <div class="p2">
+                <h3>    
+                    2.2.	Creamos una constante para el contenedor de nuestro inventario la cual esta ligada al html 
+                </h3>
+                <div class="p3">
+                    <p>
+                    1.2.1.	const contanerInventario = document.querySelector('. nombredelaclasedelcontenedordelInventario);
+                    </p>
+                </div>
+            </div>
+            <div class="p2">
+                <h3>
+                    2.3 cramos una variable vacia de para luego en ella contcatenar  el inventario . 
+                </h3>
+                <div class="p3">
+                    <p> let html = ``; </p>         
+                </div>
+            </div>
+            <div class="p2">
+                <h3>2.3.	Creamos una función para pintar el inventario. </h3>
+                <div class="p3">
+                    <p> <img src="./img/uno.jpg" alt=""></p>
+                    <div class="nota">
+                        <p>NOTA: en la funcion primero hacemos pasar nuestro array inventario por el metodo forEach en el cual vamos a recorrer el array lo que seria pasar por los objetos, le pasamos como parametro nuestro objeto pero desestruturado para que sea mas facil llamarlos con la interpolacion, cuando estamos creando el esqueleto del objeto, en cada iteracion estamos contcatenando un objeto diferente al html gracias a interpolacion y el llamado de las propiedades en ella.</p>
+                         
+                    </div>
+                    <div class="nota">
+                        <p>NOTA: las clases que se colocan en esta depende de organizacion para este ejemplo las usaremos asi como las definimos.</p>  
+                    </div>
+                </div>
+            </div>
+            <div class="p2">
+                <h3>2.4. ahora llamamos la funcion creada </h3>
+                <div class="p3">
+                    <p> printStock();</p>
+                </div>
+            </div>
+            <div class="p2">
+                <h3>2.5. y finalmente pintamos dentro de nuesto contenedor del inventario</h3>
+                <div class="p3">
+                    <p> containerInventario.innerHTML = html;</p>
+                    
+                </div>
+            </div>
+    </section>
+    <section class="p1">
+
+        <h2>Pintando en el container-cart-shop</h2>
+        <div class="p2">
+            <h3>2.1.	primero creamos una variable tipo objeto vacio  </h3>
+            <div class="p3">
+                <p>let objetoCartShop = [ ] </p>
+                <div class="nota">
+                    <p>NOTA: en la cual es la que guardaremos los productos pusheados al cart-shop.</p>
+                </div>
+            </div>
+        </div>
+        <div class="p2">
+            <h3>
+                2.2.	Creamos una constante para el contenedor del inventario del cart-shop la cual esta ligada al html 
+            </h3>
+            <div class="p3">
+                <p>1.2.1.	const containerInventarioCartShop = document.querySelector('. nombredelaclasedelcontenedordelInventarioenelcartShop);</p>
+            </div>
+            <div class="p3">
+                <div class="nota">
+                    <p>NOTA: cabe aclarar que el inventario es diferente que el inventarioCartShop uno es de la pagina principal y el otro del cart-shop.</p>
+                </div>
+            </div>
+        </div>
+        <div class="p2">
+            <h3>3.3.	Creamos una función para pintar el inventarioCartShop. </h3>
+            <div class="p3">
+                <p> <img src="./img/img2.jpg" alt=""></p>
+                <div class="nota">
+                    <p>pasos: <br>
+                         1. En la funcion primero hacemos es crear una varible para guardar los objetos que contenemos en este caso se llama html.
+                    <br>
+                    <br>
+                        2. creamos una constante en la cual convertiremos el objetoCartShop en un array.
+                    <br>
+                    <br>
+                        3. ahora recorreremos el array obtenido con un forEach pasandole por parametro el objeto desestruturado .
+                    <br>
+                    <br>
+                        4. luego concatenamos las el html con el el esqueleto que hayamos crado para los objetos del cart-shop.
+                    <br>
+                    <br>
+                        5. finalmente  con la constante que creamos al inicio hacemos el innertHTML.           
+                    </p>
+                </div>
+                <div class="nota">
+                    <p>NOTA: las clases que se colocan en esta depende de organizacion para este ejemplo las usaremos asi como las definimos.</p>
+                </div>
+            </div>
+        </div>
+        <div class="p2">
+            <h3>ahora vamos a crear la propiedad ammout y vamos a pushear el objeto desde el inventario hacia el inventerioCartShop</h3>
+            <div class="p3">
+                <p><img src="./img/img4.jpg" alt=""></p>
+                <div class="nota">
+                    <p>pasos: <br>
+                         1. primero iniciamos con la constante que creamos para ingresar a al contenedor del inventario que nombramos contanerInventario, luego la escuchamos y con el evento click  buscamos el elemento "e" que seria es desde donde vamos a agregar a nuestro carro.
+                    <br>
+                    <br>
+                        2. una vez que identifiquemos cual el es la clase del elemento que estamos buscando la ingresamos asi:<br>
+                        <br>
+                        e.target.classList.contains("nombredelaclase")
+                        <br>
+                        <br>
+                        esto se hace para poder acceder al id del elemento, este  id lo habiamos establecido igual al  de nuestro objeto, por ende cada producto tiene un id difenrente 
+                        <br>
+                        <br>
+                         <span>IMPORTANTE: si lo que hacer es escuchar el elemento contenedor del objeto y no al contenerdor de los objetos "inventerio" lo que pasa es que todos los id que obtengamos seran el mismo.</span>
+                        
+                    <br>
+                    <br>
+                        3. ahora en una constante guardamos el id del elemento "idclothing" o como lo quieras llamar. 
+                    <br>
+                    <br>
+                        4. en una constante guardaremos el objeto que sera  enviado al cart-shop, primero los buscaremos en el  inventario con un find y como parametro el objeto del inventerio la logica es que si id del objeto del inventario es igual que el "idclothing"  se guarde el objeto en objetoPusheado.
+                    <br>
+                    <br>
+                        ahora la parte mas importante  que es validar si el objetoPusheado esta  en el objetoCartShop  y con esto  en el "else" creamos el objeto dentro del objetoCartShop y tambien la propiedad ammout igualandola a uno y en el "if" lo que hacemos es el contador de la propiedad ammout
+                    <br>
+                    <br>
+                        finalmente invocamos la funcion de pintar el carro 
+                    </p>
+
+                </div>
+            </div>
+        </div>
+        <div class="p2">
+            <h3>ahora la parte de los botones en del objeto en el container-cart-shop</h3>
+            <div class="p3">
+                <p><img src="./img/img5.jpg" alt=""></p>
+                <div class="nota">
+                    <p>Nota: esta es muy similar al inicio de la antarior solo adicionamos la logica para sumar restar y eliminar</p>
+                    <p>pasos: <br>
+                         1. primero iniciamos con la constante que creamos para ingresar a al contenedor del inventario que nombramos contanerInventario, luego la escuchamos y con el evento click  buscamos el elemento "e" que seria es desde donde vamos a agregar a nuestro carro.
+                    <br>
+                    <br>
+                        2. una vez que identifiquemos cual el es la clase del elemento que estamos buscando la ingresamos asi:<br>
+                        <br>
+                        e.target.classList.contains("nombredelaclase")
+                        <br>
+                        <br>
+                        
+                        <br>
+                        <br>
+                        
+                        
+                    <br>
+                    <br>
+                        3. Para el de sumar es  acceder al objeto luego al id para verificar que ese es el correcto y finalmente a la propiedad ammout le sumamos 1.
+                    <br>
+                    <br>
+                        4. para rest acedemos de la misma manera pero le restamos 1
+                    <br>
+                    <br>
+                        y finalmente el borrado es con delete al objeto que del objetoCartShop
+                    <br>
+                    <br>
+                        finalmente invocamos la funcion de pintar el carro 
+                    </p>
+
+                </div>
+            </div>
+        </div>
+           
+    </section>
+
+
+    <style>
+        html{
+            background-color: aqua ;
+        
+        }
+        h3{
+            padding-left: 2rem;
+        }
+        .p3{
+            padding-left: 4rem;
+            font-size: 1rem;
+        }
+        .nota{
+            margin-left: 4rem;
+            padding: 1rem;
+            font-size: 1rem;
+            background-color: bisque;
+            display: block;
+            max-width: 500px ;
+        }
+        span{
+            display: block;
+            background-color: rgb(123, 123, 234);
+            color: white;
+        }
+    </style>
+</body>
+</html>
