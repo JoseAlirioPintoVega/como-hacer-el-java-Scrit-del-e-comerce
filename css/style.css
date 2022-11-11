@@ -1,0 +1,38 @@
+:root{
+    --primary-color: rgb(144, 101, 21);
+    --secundary-color: rgb(224, 241, 246);
+    --color-body:rgb(182, 182, 168);
+}
+html{
+    background-color: var(--secundary-color) ;
+
+}
+body{
+    max-width: 900px;
+    margin: auto;
+}
+h3{
+    padding-left: 2rem;
+}
+.p3{
+    padding-left: 4rem;
+    font-size: 1rem;
+}
+.nota{
+    margin-left: 4rem;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: var(--color-body);
+    display: block;
+    max-width: 500px ;
+}
+span{
+    display: block;
+    background-color: var(--color-body);
+    color: white;
+}
+h1 ,
+h2
+{
+    color: var(--primary-color);
+}
